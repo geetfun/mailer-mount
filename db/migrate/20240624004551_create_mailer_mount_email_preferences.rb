@@ -8,5 +8,8 @@ class CreateMailerMountEmailPreferences < ActiveRecord::Migration[7.2]
 
       t.timestamps
     end
+
+    add_index :mailer_mount_email_preferences, [:owner_type, :owner_id]
+    add_index :mailer_mount_email_preferences, [:owner_type, :owner_id, :channel], unique: true
   end
 end

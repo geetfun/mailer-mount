@@ -1,0 +1,10 @@
+Description:
+    Installs mailer_mount as the Rails engine
+
+Example:
+    bin/rails generate mailer_mount:install
+
+    This will create:
+        Installs the mailer_mount migrations
+        Create a mailer_mount.rb initializer with configuration options
+        Add mailer_mount specific routes

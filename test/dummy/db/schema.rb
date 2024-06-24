@@ -19,6 +19,8 @@ ActiveRecord::Schema[7.2].define(version: 2024_06_24_004551) do
     t.datetime "optin_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["owner_type", "owner_id", "channel"], name: "idx_on_owner_type_owner_id_channel_2135dbdd8c", unique: true
+    t.index ["owner_type", "owner_id"], name: "idx_on_owner_type_owner_id_fd744d1c58"
     t.index ["owner_type", "owner_id"], name: "index_mailer_mount_email_preferences_on_owner"
   end
 end

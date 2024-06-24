@@ -22,6 +22,11 @@ Gem::Specification.new do |spec|
     Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
   end
 
+  spec.post_install_message = <<~MESSAGE
+    If you're installing MailerMount for the first time, run:
+      bin/rails generate mailer_mount:install
+  MESSAGE
+
   spec.add_dependency "rails", ">= 7"
   spec.add_development_dependency "appraisal"
 end

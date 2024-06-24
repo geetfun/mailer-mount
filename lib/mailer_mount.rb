@@ -1,6 +1,9 @@
 require "mailer_mount/version"
 require "mailer_mount/engine"
-require "mailer_mount/configuration"
+
+loader = Zeitwerk::Loader.for_gem
+loader.ignore("#{__dir__}/generators")
+loader.setup
 
 module MailerMount
   class << self
