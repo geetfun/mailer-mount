@@ -1,4 +1,4 @@
 # desc "Explaining what the task does"
-# task :mailguard do
+# task :mailer_mount do
 #   # Task goes here
 # end

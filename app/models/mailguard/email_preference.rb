@@ -1,4 +1,4 @@
-module Mailguard
+module MailerMount
   class EmailPreference < ApplicationRecord
     # Associations
     belongs_to :owner, polymorphic: true

@@ -1,1 +1,1 @@
-//= link_directory ../stylesheets/mailguard .css
+//= link_directory ../stylesheets/mailer_mount .css

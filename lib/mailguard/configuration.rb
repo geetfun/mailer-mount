@@ -1,4 +1,4 @@
-module Mailguard
+module MailerMount
   class Configuration
     attr_accessor :authentication_method, :current_user_method
 

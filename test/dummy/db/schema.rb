@@ -11,7 +11,7 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.2].define(version: 2024_06_24_004551) do
-  create_table "mailguard_email_preferences", force: :cascade do |t|
+  create_table "mailer_mount_email_preferences", force: :cascade do |t|
     t.string "owner_type", null: false
     t.integer "owner_id", null: false
     t.string "channel", null: false
@@ -19,6 +19,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_06_24_004551) do
     t.datetime "optin_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["owner_type", "owner_id"], name: "index_mailguard_email_preferences_on_owner"
+    t.index ["owner_type", "owner_id"], name: "index_mailer_mount_email_preferences_on_owner"
   end
 end

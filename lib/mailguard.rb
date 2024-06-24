@@ -1,8 +1,8 @@
-require "mailguard/version"
-require "mailguard/engine"
-require "mailguard/configuration"
+require "mailer_mount/version"
+require "mailer_mount/engine"
+require "mailer_mount/configuration"
 
-module Mailguard
+module MailerMount
   class << self
     attr_accessor :configuration
   end

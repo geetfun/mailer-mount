@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  mount Mailguard::Engine => "/mailguard"
+  mount MailerMount::Engine => "/mailer_mount"
 end

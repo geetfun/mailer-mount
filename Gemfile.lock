@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    mailguard (0.1.0)
+    mailer_mount (0.1.0)
       rails (>= 7)
 
 GEM
@@ -233,7 +233,7 @@ PLATFORMS
 
 DEPENDENCIES
   appraisal
-  mailguard!
+  mailer_mount!
   puma
   rubocop-rails-omakase
   sprockets-rails

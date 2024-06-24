@@ -1,15 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Mailguard</title>
-  <%= csrf_meta_tags %>
-  <%= csp_meta_tag %>
 
-  <%= stylesheet_link_tag    "mailguard/application", media: "all" %>
+<head>
+  <title>MailerMount</title>
+  <%= csrf_meta_tags
+      %>
+    <%= csp_meta_tag
+        %>
+
+      <%= stylesheet_link_tag "mailer_mount/application"
+          ,
+          media: "all"
+          %>
 </head>
+
 <body>
 
-<%= yield %>
+  <%= yield
+      %>
 
 </body>
+
 </html>

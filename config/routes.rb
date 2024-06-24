@@ -1,3 +1,3 @@
-Mailguard::Engine.routes.draw do
+MailerMount::Engine.routes.draw do
   resources :subscriptions
 end

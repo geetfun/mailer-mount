@@ -1,4 +1,4 @@
-module Mailguard
+module MailerMount
   module SubscriptionsHelper
   end
 end

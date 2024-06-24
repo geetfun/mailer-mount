@@ -1,6 +1,6 @@
 source "https://rubygems.org"
 
-# Specify your gem's dependencies in mailguard.gemspec.
+# Specify your gem's dependencies in mailer_mount.gemspec.
 gemspec
 
 gem "puma"

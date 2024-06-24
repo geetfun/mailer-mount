@@ -1,6 +1,6 @@
 require "test_helper"
 
-module Mailguard
+module MailerMount
   class EmailPreferenceTest < ActiveSupport::TestCase
     test "the truth" do
       assert false

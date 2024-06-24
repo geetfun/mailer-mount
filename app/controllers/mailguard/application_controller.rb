@@ -1,5 +1,5 @@
-module Mailguard
+module MailerMount
   class ApplicationController < ActionController::Base
-    include Mailguard::Authentication
+    include MailerMount::Authentication
   end
 end

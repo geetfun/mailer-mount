@@ -1,4 +1,4 @@
-module Mailguard
+module MailerMount
   class ApplicationJob < ActiveJob::Base
   end
 end

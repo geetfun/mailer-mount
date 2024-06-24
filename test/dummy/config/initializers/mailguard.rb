@@ -1,4 +1,4 @@
-Mailguard.configure do |config|
+MailerMount.configure do |config|
   config.authenticator do
     # Your custom authentication logic here
     unless Current.user

@@ -1,7 +1,7 @@
 require "test_helper"
 
-class MailguardTest < ActiveSupport::TestCase
+class MailerMountTest < ActiveSupport::TestCase
   test "it has a version number" do
-    assert Mailguard::VERSION
+    assert MailerMount::VERSION
   end
 end

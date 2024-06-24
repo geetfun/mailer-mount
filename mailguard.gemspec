@@ -1,13 +1,13 @@
-require_relative "lib/mailguard/version"
+require_relative "lib/mailer_mount/version"
 
 Gem::Specification.new do |spec|
-  spec.name        = "mailguard"
-  spec.version     = Mailguard::VERSION
+  spec.name        = "mailer_mount"
+  spec.version     = MailerMount::VERSION
   spec.authors     = [ "Simon Chiu" ]
   spec.email       = [ "simon@furvur.com" ]
-  spec.homepage    = "https://github.com/geetfun/mailguard"
-  spec.summary     = "Summary of Mailguard."
-  spec.description = "Description of Mailguard."
+  spec.homepage    = "https://github.com/geetfun/MailerMount"
+  spec.summary     = "Summary of MailerMount."
+  spec.description = "Description of MailerMount."
   spec.license     = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
@@ -15,8 +15,8 @@ Gem::Specification.new do |spec|
   spec.metadata["allowed_push_host"] = "TODO: Set to 'http://mygemserver.com'"
 
   spec.metadata["homepage_uri"] = spec.homepage
-  spec.metadata["source_code_uri"] = "https://github.com/geetfun/mailguard"
-  spec.metadata["changelog_uri"] = "https://github.com/geetfun/mailguard"
+  spec.metadata["source_code_uri"] = "https://github.com/geetfun/mailer-mount"
+  spec.metadata["changelog_uri"] = "https://github.com/geetfun/mailer-mount"
 
   spec.files = Dir.chdir(File.expand_path(__dir__)) do
     Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
