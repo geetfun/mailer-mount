@@ -1,0 +1,1 @@
+css: npx tailwindcss -i ./src/tailwind.css -o ./app/assets/stylesheets/mailer_mount/tailwind.css --watch
