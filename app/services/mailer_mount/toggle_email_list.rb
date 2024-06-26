@@ -13,7 +13,7 @@ module MailerMount
       if @opt_in
         email_preference.optin_at = Time.current
         email_preference.unsubscribed_at = nil
-      elsif !@email_list_attributes['required']
+      elsif !@email_list_attributes[:required]
         email_preference.unsubscribed_at = Time.current
       end
 
