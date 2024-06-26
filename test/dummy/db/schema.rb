@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_06_24_004551) do
+ActiveRecord::Schema[7.2].define(version: 2024_06_25_112612) do
   create_table "mailer_mount_email_preferences", force: :cascade do |t|
     t.string "owner_type", null: false
     t.integer "owner_id", null: false
@@ -22,5 +22,14 @@ ActiveRecord::Schema[7.2].define(version: 2024_06_24_004551) do
     t.index ["owner_type", "owner_id", "channel"], name: "idx_on_owner_type_owner_id_channel_2135dbdd8c", unique: true
     t.index ["owner_type", "owner_id"], name: "idx_on_owner_type_owner_id_fd744d1c58"
     t.index ["owner_type", "owner_id"], name: "index_mailer_mount_email_preferences_on_owner"
+  end
+
+  create_table "mailer_mount_magic_tokens", force: :cascade do |t|
+    t.string "owner_type", null: false
+    t.integer "owner_id", null: false
+    t.string "token", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_type", "owner_id"], name: "index_mailer_mount_magic_tokens_on_owner"
   end
 end

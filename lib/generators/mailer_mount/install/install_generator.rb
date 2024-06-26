@@ -12,6 +12,6 @@ class MailerMount::InstallGenerator < Rails::Generators::Base
   end
 
   def create_initializer_file
-    template "mailer_mount_initializer.rb", "config/initializers/mailer_mount.rb"
+    template 'mailer_mount.yml.tt', 'config/mailer_mount.yml'
   end
 end

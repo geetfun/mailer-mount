@@ -1,0 +1,21 @@
+en:
+  mailer_mount:
+    page_title: "Email Subscription Settings"
+    unsubscribe_all: "Unsubscribe all"
+    subscribe_all: "Subscribe all"
+    required: "Required"
+    subscribe: "Subscribe"
+    unsubscribe: "Unsubscribe"
+    lists:
+      newsletter:
+        label: "Newsletter"
+        description: "Receive our monthly newsletter with updates and special offers."
+      product_updates:
+        label: "Product Updates"
+        description: "Get notified about new features and improvements."
+      marketing:
+        label: "Marketing Emails"
+        description: "Receive promotional offers and marketing campaigns."
+    errors:
+      some_error: "An error message"
+    subscription_updated: "Subscription updated successfully."

@@ -4,23 +4,36 @@ module MailerMount
     extend ActiveSupport::Concern
 
     included do
-      before_action :authenticate_user
+      before_action :authenticate_owner
     end
 
-    def authenticate_user
-      if MailerMount.configuration&.authentication_method
-        instance_exec(&MailerMount.configuration.authentication_method)
+    def authenticate_owner
+      if cookies[:mailer_mount].present?
+        # User is already logged in via cookie
+        token = cookies[:mailer_mount]
+        magic_token = MailerMount::MagicToken.find_by(token: token)
+
+        @current_owner = magic_token.owner if magic_token
+      elsif params[:token].present?
+        # Token is present in params, attempt to authenticate using token
+        token = params[:token]
+        magic_token = MailerMount::MagicToken.find_by(token: token)
+
+        if magic_token
+          # Set cookie for logged in user
+          cookies[:mailer_mount] = { value: token, expires: 10.minutes.from_now }
+          @current_owner = magic_token.owner
+        else
+          head :unauthorized
+        end
       else
-        raise NotImplementedError, "You must provide an authentication_method block in the configuration"
+        # No mailer_mount cookie and no token in params
+        head :unauthorized
       end
     end
 
-    def current_user
-      if MailerMount.configuration&.current_user_method
-        instance_exec(&MailerMount.configuration.current_user_method)
-      else
-        raise NotImplementedError, "You must provide a current_user_method block in the configuration"
-      end
+    def current_owner
+      @current_owner
     end
   end
 end

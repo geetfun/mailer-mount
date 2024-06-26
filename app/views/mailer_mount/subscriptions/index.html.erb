@@ -1,0 +1,52 @@
+<div class="container mx-auto p-6 space-y-6">
+  <h2 class="text-2xl font-bold mb-4"><%= t('mailer_mount.page_title') %></h2>
+
+  <div class="flex space-x-2">
+    <% if @preferences.values.any?(true) %>
+      <%= button_to t('mailer_mount.unsubscribe_all'), mailer_mount.opt_out_path('all'), method: :delete, class: 'mailer-mount--btn mailer-mount--btn-opt-out mr-2' %>
+    <% end %>
+    <% if @preferences.values.any?(false) %>
+      <%= button_to t('mailer_mount.subscribe_all'), mailer_mount.opt_in_path('all'), method: :post, class: 'mailer-mount--btn mailer-mount--btn-opt-in' %>
+    <% end %>
+  </div>
+
+  <div class="space-y-6">
+    <% MailerMount::Configuration.email_lists.each do |key, list_info| %>
+      <div class="bg-white p-4 rounded-lg shadow">
+        <div class="flex items-center justify-between mb-2">
+          <div class="relative">
+            <span class="text-lg font-semibold text-gray-800 relative">
+              <%= list_info[:label] %>
+              <% if @preferences[key.to_sym] || list_info[:required] %>
+                <span class="absolute top-[-5px] right-[-15px] flex h-3 w-3">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                </span>
+              <% end %>
+            </span>
+          </div>
+          <% if list_info[:required] %>
+            <span class="ml-2 text-sm font-semibold text-red-500"><%= t('mailer_mount.required') %></span>
+          <% else %>
+            <% if @preferences[key.to_sym] %>
+              <%= button_to t('mailer_mount.unsubscribe'),
+                  opt_out_path(id: key),
+                  method: :delete,
+                  class: "mailer-mount--btn mailer-mount--btn-opt-out",
+                  form: { class: 'inline-block' } %>
+            <% else %>
+              <%= button_to t('mailer_mount.subscribe'),
+                  opt_in_path(id: key),
+                  method: :post,
+                  class: "mailer-mount--btn mailer-mount--btn-opt-in",
+                  form: { class: 'inline-block' } %>
+            <% end %>
+          <% end %>
+        </div>
+        <% if list_info[:description].present? %>
+          <p class="text-sm text-gray-600"><%= list_info[:description] %></p>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+defaults: &defaults
+  email_lists:
+    system_email:
+      label: 'System Emails'
+      description: 'Important system updates, security notices, etc.'
+      required: true
+      default_value: true
+    business_announcements:
+      label: 'Business Announcements'
+      required: false
+      default_value: false
+
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+
+production:
+  <<: *defaults
