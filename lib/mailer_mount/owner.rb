@@ -32,17 +32,14 @@ module MailerMount
     private
 
     def get_or_create_mailer_mount_token
-      if mailer_mount_magic_token.present?
-        mailer_mount_magic_token.token
-      else
-        create_mailer_mount_token.token
-      end
+      magic_token_record = mailer_mount_magic_token.present? ? mailer_mount_magic_token : create_mailer_mount_token
+      magic_token_record.token
     end
 
     def create_mailer_mount_token
       # Create a new MagicToken for this owner
       new_token = MailerMount::MagicToken.create!(owner: self)
-      new_token.token
+      new_token
     end
   end
 end
